@@ -1,0 +1,288 @@
+/* Homepage-only sections. */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding-block: var(--space-xl) 0;
+  background: var(--ink);
+  color: var(--paper);
+  isolation: isolate;
+}
+
+.hero::before {
+  position: absolute;
+  inset: 0 0 auto auto;
+  z-index: -1;
+  width: 55%;
+  height: 100%;
+  content: "";
+  background: var(--flake) repeat;
+  background-size: 300px;
+  opacity: 0.09;
+  mask-image: linear-gradient(90deg, transparent, #161714 60%);
+}
+
+.hero__grid {
+  display: grid;
+  gap: var(--space-l);
+  align-items: center;
+}
+
+.hero h1 {
+  max-width: 17ch;
+  font-size: clamp(2.2rem, 1.3rem + 3.4vw, 4.4rem);
+}
+
+.hero h1 em {
+  font-style: normal;
+  color: var(--moss);
+}
+
+.hero__lede {
+  max-width: 38rem;
+  margin-bottom: var(--space-m);
+  font-size: var(--step-1);
+}
+
+.hero__trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.2rem;
+  padding: 0;
+  margin: var(--space-m) 0 0;
+  font-size: 1rem;
+  font-weight: 600;
+  list-style: none;
+  color: var(--paper);
+}
+
+.hero__trust li::before {
+  display: inline-block;
+  width: 0.7rem;
+  height: 0.35rem;
+  margin-right: 0.5rem;
+  vertical-align: middle;
+  content: "";
+  background: var(--moss);
+}
+
+.hero__media {
+  margin: 0 0 var(--space-xl);
+}
+
+.hero__media img {
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  object-fit: cover;
+  border: var(--border) solid var(--rule-dark);
+}
+
+.hero__frame {
+  position: relative;
+}
+
+.hero__media .spec-row {
+  position: absolute;
+  inset: auto var(--space-xs) var(--space-xs);
+  flex-wrap: nowrap;
+  gap: 0.4rem;
+}
+
+.hero__media .spec {
+  flex: 1;
+  min-width: 0;
+  padding: 0.45rem 0.55rem;
+  border-left-width: 4px;
+}
+
+.hero__media .spec__value {
+  font-size: var(--step-0);
+}
+
+.hero__caption {
+  margin-top: var(--space-xs);
+  font-size: var(--step--1);
+  color: var(--grit-light);
+}
+
+@media (width >= 56rem) {
+  .hero {
+    padding-top: var(--space-2xl);
+  }
+
+  .hero__grid {
+    grid-template-columns: 1.1fr 0.9fr;
+  }
+
+  .hero__media {
+    margin-bottom: calc(var(--space-2xl) * -0.5);
+  }
+}
+
+/* Statement band over real flake */
+.statement {
+  position: relative;
+  background: var(--slab) var(--flake) repeat;
+  background-size: 260px;
+  color: var(--paper);
+}
+
+.statement__inner {
+  padding: var(--space-xl) 0;
+}
+
+.statement p {
+  max-width: 30ch;
+  padding: var(--space-m) var(--space-l);
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-3);
+  font-stretch: 125%;
+  font-weight: 900;
+  line-height: 1.12;
+  background: var(--ink);
+  border-left: 10px solid var(--moss);
+}
+
+/* Problem: two-column with failure list */
+.problem__list {
+  display: grid;
+  gap: var(--space-s);
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+.problem__list li {
+  padding: var(--space-s) var(--space-m);
+  background: var(--paper);
+  border-left: 6px solid var(--olive);
+}
+
+.problem__list strong {
+  display: block;
+  font-family: var(--font-display);
+  font-stretch: 125%;
+}
+
+/* Residential / Commercial doors */
+.doors {
+  display: grid;
+  gap: var(--space-l);
+}
+
+@media (width >= 60rem) {
+  .doors {
+    grid-template-columns: 1fr 1fr;
+  }
+}
+
+.door {
+  display: flex;
+  flex-direction: column;
+  background: var(--slab);
+  border: var(--border) solid var(--rule-dark);
+}
+
+.door__media img {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  object-fit: cover;
+}
+
+.door__body {
+  padding: var(--space-l);
+}
+
+.door__body h3 {
+  font-size: var(--step-3);
+}
+
+.door__body h3 a {
+  color: var(--paper);
+  text-decoration: none;
+}
+
+.door__body h3 a:hover {
+  color: var(--moss);
+}
+
+.door__links {
+  display: grid;
+  gap: var(--space-xs);
+  padding: 0;
+  margin: var(--space-m) 0 0;
+  list-style: none;
+}
+
+.door__links a {
+  position: relative;
+  display: block;
+  min-height: 3.25rem;
+  padding: 0.8rem 2.75rem 0.8rem 1rem;
+  background: var(--ink);
+  color: var(--paper);
+  font-weight: 700;
+  text-decoration: none;
+  border: 1px solid var(--rule-dark);
+  border-left: 6px solid var(--moss);
+  transition: background-color 0.18s var(--ease);
+}
+
+.door__links a::after {
+  content: "\2192";
+  color: var(--moss);
+}
+
+.door__links a:hover {
+  background: var(--slab-2);
+  color: var(--paper);
+}
+
+.door__links span {
+  display: block;
+  font-size: var(--step--1);
+  font-weight: 500;
+  color: var(--grit-light);
+}
+
+/* System section */
+.system__note {
+  margin-top: var(--space-m);
+  font-size: 1rem;
+  color: var(--grit);
+}
+
+/* Why NES */
+.why .split {
+  align-items: start;
+}
+
+@media (width >= 56rem) {
+  .why__quote {
+    position: sticky;
+    top: 7rem;
+  }
+}
+
+.why__quote {
+  margin: 0;
+  padding: var(--space-l);
+  background: var(--olive);
+  color: var(--paper);
+}
+
+.why__quote p {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: var(--step-2);
+  font-stretch: 125%;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.why__quote footer {
+  margin-top: var(--space-s);
+  font-size: var(--step--1);
+  font-weight: 600;
+}

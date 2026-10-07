@@ -1,0 +1,69 @@
+/* NES Flooring design tokens. Custom properties only, no selectors beyond :root and @font-face. */
+
+@font-face {
+  font-family: Archivo;
+  font-style: normal;
+  font-weight: 700 900;
+  font-stretch: 125%;
+  font-display: swap;
+  src: url("/fonts/archivo-expanded-latin.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: Figtree;
+  font-style: normal;
+  font-weight: 400 700;
+  font-display: swap;
+  src: url("/fonts/figtree-latin.woff2") format("woff2");
+}
+
+:root {
+  /* Palette: cured slab darks, concrete paper lights, the client's olive, a bright olive for dark grounds */
+  --ink: #161714;
+  --slab: #22241f;
+  --slab-2: #2c2e28;
+  --paper: #f1efe9;
+  --paper-2: #e4e1d8;
+  --olive: #495708;
+  --olive-deep: #3a4506;
+  --moss: #b5cc45;
+  --moss-soft: #d3e38a;
+  --grit: #5e6058;
+  --grit-light: #9fa199;
+  --rule-light: #8c8e86;
+  --rule-dark: rgb(241 239 233 / 18%);
+  --error: #8f1d1d;
+  --error-on-dark: #ff9d8a;
+
+  /* Type */
+  --font-display: archivo, "Arial Black", "Helvetica Neue", sans-serif;
+  --font-body: figtree, "Segoe UI", system-ui, sans-serif;
+  --step--1: clamp(0.84rem, 0.8rem + 0.15vw, 0.92rem);
+  --step-0: clamp(1rem, 0.96rem + 0.2vw, 1.125rem);
+  --step-1: clamp(1.15rem, 1.05rem + 0.45vw, 1.4rem);
+  --step-2: clamp(1.35rem, 1.15rem + 0.9vw, 1.9rem);
+  --step-3: clamp(1.6rem, 1.25rem + 1.6vw, 2.6rem);
+  --step-4: clamp(1.95rem, 1.35rem + 2.8vw, 3.6rem);
+  --step-5: clamp(2.2rem, 1.3rem + 4.2vw, 4.8rem);
+
+  /* Space */
+  --space-2xs: 0.375rem;
+  --space-xs: 0.625rem;
+  --space-s: 1rem;
+  --space-m: clamp(1.25rem, 1rem + 1vw, 1.75rem);
+  --space-l: clamp(1.75rem, 1.2rem + 2.4vw, 3rem);
+  --space-xl: clamp(2.5rem, 1.6rem + 4vw, 5rem);
+  --space-2xl: clamp(3.5rem, 2rem + 6.5vw, 8rem);
+  --gutter: clamp(1rem, 0.6rem + 2vw, 2.5rem);
+  --max: 76rem;
+  --measure: 68ch;
+
+  /* Shape: square corners, the trade aesthetic */
+  --radius: 0;
+  --border: 2px;
+  --shadow: 0 1px 0 rgb(22 23 20 / 6%), 0 12px 32px -18px rgb(22 23 20 / 45%);
+
+  /* Signature: broadcast flake texture */
+  --flake: url("/images/flake-tile.svg");
+  --ease: cubic-bezier(0.2, 0.7, 0.2, 1);
+}
