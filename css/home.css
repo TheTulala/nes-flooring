@@ -81,23 +81,8 @@
   position: relative;
 }
 
-.hero__media .spec-row {
-  position: absolute;
-  inset: auto var(--space-xs) var(--space-xs);
-  flex-wrap: nowrap;
-  gap: 0.4rem;
-}
 
-.hero__media .spec {
-  flex: 1;
-  min-width: 0;
-  padding: 0.45rem 0.55rem;
-  border-left-width: 4px;
-}
 
-.hero__media .spec__value {
-  font-size: var(--step-0);
-}
 
 .hero__caption {
   margin-top: var(--space-xs);
